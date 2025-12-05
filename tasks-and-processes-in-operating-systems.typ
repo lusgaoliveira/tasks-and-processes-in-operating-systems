@@ -158,7 +158,7 @@
     image("img/task-control-block.png", width: 50%),
     caption: [
       Structure of the Task Control Block.\  
-      _Fonte: @han2021. (2025)._
+      _Fonte: @han2021 (2025)._
     ]
   )
 ]
@@ -186,7 +186,40 @@
     O núcleo do sistema operacional mantém descritores de processos, denominados PCBs (Process Control Blocks), para armazenar as informações referentes aos processos ativos. Um PCB contém informações como o identificador do processo (PID – Process IDentifier), seu usuário, prioridade, data de início, caminho do arquivo contendo o código executado pelo processo, áreas de memória em uso, arquivos abertos, etc
   ]
 ]
+#title-slide[
+  Gestão de Processos
+]
 
+#slide[
+  - Desde a inicialização do SO até o seu desligamento, diversos processos são criados e destruídos.
+  - Chamadas de sistemas. Ex: fork(), exec(), exit().
+  
+  #figure(
+    image("img/chamadas-processos.png", width: 60%),
+    caption: [
+      System Calls.\  
+      _Fonte: @maziero2019 (2019)._
+    ]
+  )
+
+  - #stress("UNIX")
+    - fork(): cria um novo processo como uma cópia do processo pai.
+    - execve(): substitui o espaço de endereçamento do processo atual por um novo programa.
+    - Hierarquia de processos (UNIX inicia no boot o processo init).
+
+  - #stress("Windows")
+    - Não possui o conceito de hierarquia de processos.
+    - Conceito de Handle para gerenciar processos "filhos".
+    
+
+  #figure(
+    image("img/process-tree.png", width: 80%),
+    caption: [
+      Process Tree.\  
+      _Fonte: Autor (2025)._
+    ]
+  )
+]
 
 // ----------------------------------------------------------
 // SLIDE 6 — Conclusão
